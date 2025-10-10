@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://8ekpighjgaxw"]
+[gd_scene load_steps=20 format=4 uid="uid://8ekpighjgaxw"]
 
 [ext_resource type="PackedScene" uid="uid://doxdf4q4e7151" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://cbtw2wuceypig" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://f65v7u18a62j" path="res://scenes/platform_b.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://d1a60iejicvj2" path="res://scenes/platform_s.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://cc11nel2bhp2m" path="res://scenes/coin.tscn" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -138,7 +141,168 @@ texture = ExtResource("2_yqjtg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
+[sub_resource type="Animation" id="Animation_lnu2h"]
+resource_name = "P_move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1362, 4), Vector2(1551, 4)]
+}
+
+[sub_resource type="Animation" id="Animation_lbhrr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1362, 4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iywne"]
+_data = {
+&"P_move": SubResource("Animation_lnu2h"),
+&"RESET": SubResource("Animation_lbhrr")
+}
+
+[sub_resource type="Animation" id="Animation_iywne"]
+resource_name = "P_move"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.4333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1692, 5), Vector2(1788, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_p57ef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1692, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5sy4"]
+_data = {
+&"P_move": SubResource("Animation_iywne"),
+&"RESET": SubResource("Animation_p57ef")
+}
+
+[sub_resource type="Animation" id="Animation_gee14"]
+resource_name = "move_s"
+length = 2.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1908, -32), Vector2(2053, -32)]
+}
+
+[sub_resource type="Animation" id="Animation_0tnpc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1908, -32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vtaks"]
+_data = {
+&"RESET": SubResource("Animation_0tnpc"),
+&"move_s": SubResource("Animation_gee14")
+}
+
+[sub_resource type="Animation" id="Animation_kvpfn"]
+resource_name = "move"
+length = 1.7
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1817, -13), Vector2(1879, -13)]
+}
+
+[sub_resource type="Animation" id="Animation_dinhu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1810, -13)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kvuet"]
+_data = {
+&"RESET": SubResource("Animation_dinhu"),
+&"move": SubResource("Animation_kvpfn")
+}
+
 [node name="Game" type="Node2D"]
+
+[node name="level" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_lbhrr")
+format = 2
+
+[node name="Layer1" type="TileMapLayer" parent="level"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAAAAAEAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAMAAMAAAAAAAEAAAAOAAIAAAAAAAEAAAAPAAIAAAAAAAEAAAALAAQAAAAAAAEAAAAKAAQAAAAAAAEAAAAJAAQAAAAAAAEAAAAMAAQAAAAAAAEAAAAGAAIAAAAAAAEAAAAHAAIAAAAAAAEAAAAIAAIAAAAAAAEAAAAEAAMAAAAAAAEAAAADAAMAAAAAAAEAAAACAAMAAAAAAAEAAAABAAMAAAAAAAEAAAARAAIAAAAGAAAAAAASAAMAAAAGAAAAAAATAAMAAAAGAAAAAAATAAQAAAAGAAAAAAAUAAQAAAAGAAAAAAAVAAQAAAAGAAAAAAAVAAUAAAAGAAAAAAAWAAUAAAAGAAAAAAAXAAYAAAAGAAAAAAAYAAYAAAAGAAAAAAAaAAYAAAAGAAAAAAAbAAYAAAAGAAAAAAAdAAYAAAAGAAAAAAAeAAYAAAAGAAAAAAAgAAYAAAAGAAAAAAAhAAYAAAAGAAAAAAAiAAcAAAAGAAAAAAAjAAcAAAAGAAAAAAARAAMAAAAGAAEAAAASAAQAAAAGAAEAAAATAAUAAAAGAAEAAAAUAAUAAAAGAAEAAAAVAAYAAAAGAAEAAAAWAAYAAAAGAAEAAAAXAAcAAAAGAAEAAAAYAAcAAAAGAAEAAAAWAAcAAAAGAAEAAAAUAAYAAAAGAAEAAAASAAUAAAAGAAEAAAARAAQAAAAGAAEAAAAaAAcAAAAGAAEAAAAbAAcAAAAGAAEAAAAdAAcAAAAGAAEAAAAeAAcAAAAGAAEAAAAgAAcAAAAGAAEAAAAhAAcAAAAGAAEAAAAiAAgAAAAGAAEAAAAjAAgAAAAGAAEAAAAhAAgAAAAGAAEAAAAlAAkAAAAHAAAAAAAmAAkAAAAHAAAAAAAnAAkAAAAHAAAAAAAoAAkAAAAHAAAAAAApAAkAAAAHAAAAAAAqAAkAAAAHAAAAAAArAAkAAAAHAAAAAAAsAAkAAAAHAAAAAAAtAAkAAAAHAAAAAAApAAgAAAAIAAQAAAAKAAIAAAAIAAMAAAAHAAAAAAAIAAUAAAAOAAAAAAAHAAYAAAAYAAUAAAAAAAgAAAAmAAgAAAAHAAQAAAAnAAgAAAAHAAQAAAAnAAcAAAAHAAQAAAAsAAgAAAABAAQAAAAhAAUAAAABAAQAAAAUAAMAAAABAAQAAAAvAAgAAAACAAAAAAAwAAgAAAACAAAAAAAxAAgAAAACAAAAAAAzAAYAAAACAAAAAAA0AAYAAAACAAAAAAA1AAYAAAACAAAAAAA4AAcAAAACAAAAAAA7AAgAAAACAAAAAAA+AAYAAAACAAAAAABAAAUAAAACAAAAAABBAAUAAAACAAAAAABCAAUAAAACAAAAAABDAAUAAAACAAAAAABEAAUAAAACAAAAAABFAAUAAAACAAAAAABEAAQAAAAIAAYAAABCAAQAAAADAAcAAABCAAIAAAACAAQAAABFAAQAAAAIAAMAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAEAAAD9/wMAAAAAAAEAAAD+/wMAAAAAAAEAAAD//wMAAAAAAAEAAAAAAAMAAAAAAAEAAABJAAUAAAAAAAAAAABKAAUAAAAAAAAAAABLAAUAAAAAAAAAAABMAAUAAAAAAAAAAABNAAAAAAAAAAAAAABOAAAAAAAAAAAAAABPAAAAAAAAAAAAAABQAAAAAAAAAAAAAABRAAAAAAAAAAAAAABSAAAAAAAAAAAAAABTAAAAAAAAAAAAAABTAAEAAAAAAAEAAABTAAIAAAAAAAEAAABTAAMAAAAAAAEAAABTAAQAAAAAAAEAAABSAAUAAAAAAAAAAABQAAUAAAAAAAAAAABRAAUAAAAAAAAAAABPAAUAAAAAAAAAAABNAAUAAAAAAAAAAABOAAUAAAAAAAAAAABTAAUAAAAAAAAAAABOAAQAAAABAAMAAABRAP//AAABAAMAAABRAAQAAAAHAAQAAABSAAQAAAAHAAQAAABSAAMAAAAIAAQAAABOAP//AAAIAAgAAABiAAAAAAAHAAAAAABiAAEAAAAGAAEAAABjAAAAAAAHAAAAAABjAAEAAAAGAAEAAABkAAAAAAAHAAAAAABkAAEAAAAIAAEAAABlAAAAAAAHAAAAAABlAAEAAAAGAAEAAABkAP//AAAIAAQAAABmAP//AAAAAAgAAABmAAAAAAAHAAAAAABmAAEAAAAGAAEAAABnAAAAAAAHAAAAAABnAAEAAAAIAAAAAABoAAAAAAAHAAAAAABoAAEAAAAGAAEAAACBAP7/AAAEAAAAAACCAP7/AAAEAAAAAACDAP7/AAAEAAAAAACEAP7/AAAEAAAAAACFAP7/AAAEAAAAAACGAP7/AAAEAAAAAACBAP//AAAEAAEAAACCAP//AAAEAAEAAACEAP//AAAEAAEAAACFAP//AAAEAAEAAACDAP//AAAFAAEAAACEAP3/AAAFAAUAAACEAPz/AAAFAAQAAACEAPv/AAAFAAQAAACEAPr/AAAFAAMAAACCAP3/AAAEAAgAAACGAP3/AAAIAAMAAACHAP7/AAAEAAAAAACHAP//AAAEAAEAAACGAP//AAAFAAEAAAA=")
+tile_set = SubResource("TileSet_lbhrr")
 
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(1204, 71)
@@ -148,11 +312,78 @@ position = Vector2(-27, -30)
 zoom = Vector2(3.6, 3.6)
 position_smoothing_enabled = true
 
-[node name="level" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_lbhrr")
-format = 2
+[node name="platform" type="Node" parent="."]
 
-[node name="Layer1" type="TileMapLayer" parent="level"]
-use_parent_material = true
-tile_map_data = PackedByteArray("AAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAKAAMAAAAAAAAAAAALAAMAAAAAAAAAAAAJAAMAAAAAAAAAAAAMAAIAAAAAAAAAAAANAAEAAAAAAAAAAAANAAIAAAAAAAEAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAMAAMAAAAAAAEAAAAOAAIAAAAAAAEAAAAPAAIAAAAAAAEAAAALAAQAAAAAAAEAAAAKAAQAAAAAAAEAAAAJAAQAAAAAAAEAAAAMAAQAAAAAAAEAAAAGAAIAAAAAAAEAAAAHAAIAAAAAAAEAAAAIAAIAAAAAAAEAAAAEAAMAAAAAAAEAAAADAAMAAAAAAAEAAAACAAMAAAAAAAEAAAABAAMAAAAAAAEAAAARAAIAAAAGAAAAAAASAAMAAAAGAAAAAAATAAMAAAAGAAAAAAATAAQAAAAGAAAAAAAUAAQAAAAGAAAAAAAVAAQAAAAGAAAAAAAVAAUAAAAGAAAAAAAWAAUAAAAGAAAAAAAXAAYAAAAGAAAAAAAYAAYAAAAGAAAAAAAaAAYAAAAGAAAAAAAbAAYAAAAGAAAAAAAdAAYAAAAGAAAAAAAeAAYAAAAGAAAAAAAgAAYAAAAGAAAAAAAhAAYAAAAGAAAAAAAiAAcAAAAGAAAAAAAjAAcAAAAGAAAAAAARAAMAAAAGAAEAAAASAAQAAAAGAAEAAAATAAUAAAAGAAEAAAAUAAUAAAAGAAEAAAAVAAYAAAAGAAEAAAAWAAYAAAAGAAEAAAAXAAcAAAAGAAEAAAAYAAcAAAAGAAEAAAAWAAcAAAAGAAEAAAAUAAYAAAAGAAEAAAASAAUAAAAGAAEAAAARAAQAAAAGAAEAAAAaAAcAAAAGAAEAAAAbAAcAAAAGAAEAAAAdAAcAAAAGAAEAAAAeAAcAAAAGAAEAAAAgAAcAAAAGAAEAAAAhAAcAAAAGAAEAAAAiAAgAAAAGAAEAAAAjAAgAAAAGAAEAAAAhAAgAAAAGAAEAAAAlAAkAAAAHAAAAAAAmAAkAAAAHAAAAAAAnAAkAAAAHAAAAAAAoAAkAAAAHAAAAAAApAAkAAAAHAAAAAAAqAAkAAAAHAAAAAAArAAkAAAAHAAAAAAAsAAkAAAAHAAAAAAAtAAkAAAAHAAAAAAApAAgAAAAIAAQAAAAKAAIAAAAIAAMAAAAHAAAAAAAIAAUAAAAOAAAAAAAHAAYAAAAYAAUAAAAAAAgAAAAmAAgAAAAHAAQAAAAnAAgAAAAHAAQAAAAnAAcAAAAHAAQAAAAsAAgAAAABAAQAAAAhAAUAAAABAAQAAAAUAAMAAAABAAQAAAAvAAgAAAACAAAAAAAwAAgAAAACAAAAAAAxAAgAAAACAAAAAAAzAAYAAAACAAAAAAA0AAYAAAACAAAAAAA1AAYAAAACAAAAAAA4AAcAAAACAAAAAAA7AAgAAAACAAAAAAA+AAYAAAACAAAAAABAAAUAAAACAAAAAABBAAUAAAACAAAAAABCAAUAAAACAAAAAABDAAUAAAACAAAAAABEAAUAAAACAAAAAABFAAUAAAACAAAAAABEAAQAAAAIAAYAAABCAAQAAAADAAcAAABCAAIAAAACAAQAAABFAAQAAAAIAAMAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAEAAAD9/wMAAAAAAAEAAAD+/wMAAAAAAAEAAAD//wMAAAAAAAEAAAAAAAMAAAAAAAEAAABJAAUAAAAAAAAAAABKAAUAAAAAAAAAAABLAAUAAAAAAAAAAABMAAUAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_lbhrr")
+[node name="Platform_b2" parent="platform" instance=ExtResource("3_lnu2h")]
+position = Vector2(1208.8823, 43.358765)
+
+[node name="Platform_b" parent="platform" instance=ExtResource("3_lnu2h")]
+position = Vector2(1362, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform/Platform_b"]
+libraries = {
+&"": SubResource("AnimationLibrary_iywne")
+}
+autoplay = "P_move"
+
+[node name="platform_s" parent="platform" instance=ExtResource("4_lbhrr")]
+position = Vector2(1692, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform/platform_s"]
+libraries = {
+&"": SubResource("AnimationLibrary_u5sy4")
+}
+autoplay = "P_move"
+
+[node name="platform_s2" parent="platform" instance=ExtResource("4_lbhrr")]
+position = Vector2(1908, -32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform/platform_s2"]
+libraries = {
+&"": SubResource("AnimationLibrary_vtaks")
+}
+autoplay = "move_s"
+
+[node name="platform_s3" parent="platform" instance=ExtResource("4_lbhrr")]
+position = Vector2(1810, -13)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform/platform_s3"]
+libraries = {
+&"": SubResource("AnimationLibrary_kvuet")
+}
+autoplay = "move"
+
+[node name="coins" type="Node" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(1669, -8)
+
+[node name="coin3" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(1042, 74)
+
+[node name="coin2" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(1281, -10)
+
+[node name="coin4" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(1208, 31)
+
+[node name="coin5" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(689, 133)
+
+[node name="coin6" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(836.298, 88.14778)
+
+[node name="coin7" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(432, 88)
+
+[node name="coin8" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(200, 24)
+
+[node name="coin10" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(24, 24)
+
+[node name="coin9" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(0, 24)
+
+[node name="coin11" parent="coins" instance=ExtResource("5_iywne")]
+position = Vector2(-22, 24)

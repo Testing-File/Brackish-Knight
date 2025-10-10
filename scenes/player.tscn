@@ -44,6 +44,7 @@ radius = 4.675397
 height = 14.026192
 
 [node name="player" type="CharacterBody2D"]
+z_index = 3
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
