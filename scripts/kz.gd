@@ -4,4 +4,8 @@ extends Area2D
 
 #We use a timer for dealy b/w death and respawn
 func _on_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	d_delay.start()
+	
+
+func _on_d_delay_timeout() -> void:
+	get_tree().reload_current_scene()
