@@ -1,16 +1,17 @@
-[gd_scene load_steps=24 format=4 uid="uid://8ekpighjgaxw"]
+[gd_scene load_steps=25 format=4 uid="uid://8ekpighjgaxw"]
 
 [ext_resource type="PackedScene" uid="uid://doxdf4q4e7151" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://chea1sgfk0cu4" path="res://scripts/game.gd" id="1_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cbtw2wuceypig" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://f65v7u18a62j" path="res://scenes/platform_b.tscn" id="3_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://dj7kuvxelpkf8" path="res://s_spike.tscn" id="4_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://dj7kuvxelpkf8" path="res://scenes/s_spike.tscn" id="4_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://d1a60iejicvj2" path="res://scenes/platform_s.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cc11nel2bhp2m" path="res://scenes/coin.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://kasn246gljpv" path="res://scenes/kz.tscn" id="6_p57ef"]
 [ext_resource type="Texture2D" uid="uid://nv6b2w1oqhfq" path="res://parallax/front.png" id="7_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://cf0jah80ovp6a" path="res://parallax/middle.png" id="8_vtaks"]
 [ext_resource type="Texture2D" uid="uid://p1efrcg8eomw" path="res://parallax/Back.png" id="9_kvpfn"]
+[ext_resource type="PackedScene" uid="uid://bh3slby86ypk4" path="res://scenes/enemy_1.tscn" id="12_dinhu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -398,3 +399,6 @@ centered = false
 
 [node name="Sprite2D" parent="." instance=ExtResource("4_kvpfn")]
 position = Vector2(1318, 204)
+
+[node name="enemy_1" parent="." instance=ExtResource("12_dinhu")]
+position = Vector2(1358.3943, 190.59189)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj7kuvxelpkf8"]
+[gd_scene load_steps=5 format=3 uid="uid://dj7kuvxelpkf8"]
 
 [ext_resource type="Texture2D" uid="uid://dpum5nkv0l5h7" path="res://assets/art_atlas.png" id="1_yl4b5"]
-[ext_resource type="Script" uid="uid://b6oh66dq41w8f" path="res://sprite_2d.gd" id="2_t6rrf"]
+[ext_resource type="Script" uid="uid://b6oh66dq41w8f" path="res://scripts/sprite_2d.gd" id="2_t6rrf"]
+[ext_resource type="AudioStream" uid="uid://bqh4egh4518nl" path="res://assets/sounds/hurt.wav" id="3_t6rrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ux4pg"]
 size = Vector2(5.9395638, 3.865833)
@@ -19,5 +20,8 @@ collision_mask = 2
 position = Vector2(0, 1)
 scale = Vector2(0.94637585, 1.2377516)
 shape = SubResource("RectangleShape2D_ux4pg")
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_t6rrf")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
