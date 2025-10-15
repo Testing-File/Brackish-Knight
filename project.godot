@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="BrackishNight"
-run/main_scene="uid://8ekpighjgaxw"
+run/main_scene="uid://c0neqnate7t4c"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [input]
 

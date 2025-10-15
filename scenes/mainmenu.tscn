@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0neqnate7t4c"]
+
+[ext_resource type="Script" uid="uid://t02b7v03tgqf" path="res://scenes/mainmenu.gd" id="1_5mbse"]
+
+[node name="Mainmenu" type="Node2D"]
+script = ExtResource("1_5mbse")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 479.99997
+offset_top = 256.0
+offset_right = 539.0
+offset_bottom = 287.0
+scale = Vector2(3.2535677, 2.330992)
+text = "Play <-"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 384.0
+offset_top = 96.0
+offset_right = 693.0
+offset_bottom = 220.0
+scale = Vector2(2.9435956, 3.724771)
+text = "Adventures of Bob
+"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 455.99997
+offset_top = 328.0
+offset_right = 534.0
+offset_bottom = 377.0
+scale = Vector2(2.96, 3.44)
+text = "Esc to exit
+"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
