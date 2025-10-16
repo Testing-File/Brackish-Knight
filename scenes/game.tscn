@@ -283,7 +283,7 @@ tile_map_data = PackedByteArray("AACJAAMAAAAFAAQAAACJAAQAAAAFAAUAAACLAAQAAAAIAAM
 tile_set = SubResource("TileSet_lbhrr")
 
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(1266.4277, 188.18732)
+position = Vector2(26.764702, 133.30966)
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-27, -30)
@@ -292,6 +292,40 @@ limit_top = 12
 limit_bottom = 290
 limit_smoothed = true
 position_smoothing_enabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="player"]
+follow_viewport_enabled = true
+
+[node name="Label" type="Label" parent="player/CanvasLayer"]
+offset_left = 41.0
+offset_top = 62.0
+offset_right = 102.0
+offset_bottom = 85.0
+text = "🖱️Dash"
+
+[node name="Label3" type="Label" parent="player/CanvasLayer"]
+offset_left = 41.0
+offset_top = 43.0
+offset_right = 102.0
+offset_bottom = 92.0
+text = "🏃‍♂️‍➡️A <-
+"
+
+[node name="Label2" type="Label" parent="player/CanvasLayer"]
+offset_left = 43.0
+offset_top = 78.0
+offset_right = 163.0
+offset_bottom = 127.0
+text = "— Double jump
+"
+
+[node name="Label4" type="Label" parent="player/CanvasLayer"]
+offset_left = 43.0
+offset_top = 93.0
+offset_right = 163.0
+offset_bottom = 142.0
+text = "🏃‍D ->
+"
 
 [node name="platform" type="Node" parent="."]
 
@@ -355,7 +389,7 @@ position = Vector2(311.3113, 119.584885)
 position = Vector2(117.69676, 145.55069)
 
 [node name="coin9" parent="coins" instance=ExtResource("5_iywne")]
-position = Vector2(92.365845, 142.70563)
+position = Vector2(90, 147)
 
 [node name="coin11" parent="coins" instance=ExtResource("5_iywne")]
 position = Vector2(62.94281, 145.55069)
