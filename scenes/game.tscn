@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://8ekpighjgaxw"]
+[gd_scene load_steps=26 format=4 uid="uid://8ekpighjgaxw"]
 
 [ext_resource type="PackedScene" uid="uid://doxdf4q4e7151" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Script" uid="uid://chea1sgfk0cu4" path="res://scripts/game.gd" id="1_vtaks"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cf0jah80ovp6a" path="res://parallax/middle.png" id="8_vtaks"]
 [ext_resource type="Texture2D" uid="uid://p1efrcg8eomw" path="res://parallax/Back.png" id="9_kvpfn"]
 [ext_resource type="PackedScene" uid="uid://bh3slby86ypk4" path="res://scenes/enemy_1.tscn" id="12_dinhu"]
+[ext_resource type="Script" uid="uid://c2ia04fpg6w3r" path="res://scenes/button12.gd" id="13_kvuet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -436,3 +437,12 @@ position = Vector2(1318, 204)
 
 [node name="enemy_1" parent="." instance=ExtResource("12_dinhu")]
 position = Vector2(1358.3943, 190.59189)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 2210.0
+offset_top = 57.000008
+offset_right = 2308.0
+offset_bottom = 88.00001
+scale = Vector2(0.45163018, 0.28088102)
+text = "Click to End"
+script = ExtResource("13_kvuet")
